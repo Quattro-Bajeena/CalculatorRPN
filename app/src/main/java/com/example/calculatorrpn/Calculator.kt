@@ -1,10 +1,10 @@
 package com.example.calculatorrpn
-import java.util.ArrayDeque
+import java.util.*
 import kotlin.math.*
 
 class Calculator {
 
-    var stack : ArrayDeque<Float> = ArrayDeque<Float>()
+    var stack : Deque<Float> = ArrayDeque<Float>()
 
     constructor(){
         stack.push(6f)
@@ -17,6 +17,9 @@ class Calculator {
     }
 
     fun add(){
+        if(stack.size < 2)
+            return
+
         var value1 = stack.pop()
         var value2 = stack.pop()
         var result = value1 + value2
@@ -24,6 +27,9 @@ class Calculator {
     }
 
     fun subtract(){
+        if(stack.size < 2)
+            return
+
         var value1 = stack.pop()
         var value2 = stack.pop()
         var result = value2 - value1
@@ -31,6 +37,9 @@ class Calculator {
     }
 
     fun multiply(){
+        if(stack.size < 2)
+            return
+
         var value1 = stack.pop()
         var value2 = stack.pop()
         var result = value1 * value2
@@ -38,6 +47,9 @@ class Calculator {
     }
 
     fun divide(){
+        if(stack.size < 2)
+            return
+
         var value1 = stack.pop()
         var value2 = stack.pop()
         var result = value2 / value1
@@ -45,6 +57,9 @@ class Calculator {
     }
 
     fun power(){
+        if(stack.size < 2)
+            return
+
         var value1 = stack.pop()
         var value2 = stack.pop()
         var result = value2.pow(value1)
@@ -52,6 +67,8 @@ class Calculator {
     }
 
     fun squareRoot(){
+        if(stack.size == 0)
+            return
         var value1 = stack.pop()
         var result = sqrt(value1)
         stack.push(result)
@@ -62,19 +79,31 @@ class Calculator {
     }
 
     fun swap(){
+        if(stack.size < 2)
+            return
+
         var value1 = stack.pop()
         var value2 = stack.pop()
-        stack.push(value2)
         stack.push(value1)
+        stack.push(value2)
     }
 
     fun drop(){
+        if(stack.size == 0)
+            return
         stack.pop()
     }
 
     fun plusMinus(){
+        if(stack.size == 0)
+            return
+
         var value1 = stack.pop()
         value1 *= -1
         stack.push(value1)
+    }
+
+    fun duplicate(){
+        stack.push(stack.first)
     }
 }

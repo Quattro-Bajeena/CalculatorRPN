@@ -1,16 +1,19 @@
 package com.example.calculatorrpn
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import com.example.calculatorrpn.databinding.ActivityMainBinding
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatActivity
+import com.example.calculatorrpn.databinding.ActivityMainBinding
+import kotlin.math.*
 import kotlin.text.*
+
 
 class MainActivity : AppCompatActivity() {
 
     var calculator : Calculator = Calculator()
     var enteredValue : String = ""
+    var rounding: Int = 1
     lateinit var binding: ActivityMainBinding
     lateinit var adapter : ArrayAdapter<Float>
 
@@ -46,16 +49,17 @@ class MainActivity : AppCompatActivity() {
         binding.buttonSwap.setOnClickListener(){calculator.swap();refreshStack()}
         binding.buttonDrop.setOnClickListener(){calculator.drop();refreshStack()}
         binding.buttonPlusMinus.setOnClickListener(){calculator.plusMinus();refreshStack()}
+        binding.buttonSettings.setOnClickListener(){openSettings()}
 
     }
 
-    fun inputNumber(num : String){
+    private fun inputNumber(num : String){
         enteredValue += num
         binding.textEntered.text = enteredValue
         //Log.i("debug", enteredValue)
     }
 
-    fun enterNumber(){
+    private fun enterNumber(){
         if(binding.textEntered.text.isEmpty() == true){
             calculator.duplicate()
         }
@@ -67,15 +71,28 @@ class MainActivity : AppCompatActivity() {
         refreshStack()
     }
 
-    fun refreshStack(){
+    private fun refreshStack(){
+        fun roundFloat(num : Float, decimals : Int): Float {
+            var multiplier = 1f
+            repeat(decimals) { multiplier *= 10 }
+            return round(num * multiplier) / multiplier
+        }
         adapter.clear()
-        adapter.addAll(calculator.stack.toList())
+        adapter.addAll(calculator.stack.map{roundFloat(it, rounding)})
         adapter.notifyDataSetChanged()
     }
 
-    fun undo(){
+    private fun undo(){
         enteredValue = enteredValue.dropLast(1)
         binding.textEntered.text = enteredValue
+    }
+
+    private fun openSettings(){
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
+
+        val settings = getSharedPreferences("General", 0)
+        rounding = settings.getInt("Rounding", rounding)
     }
 
 

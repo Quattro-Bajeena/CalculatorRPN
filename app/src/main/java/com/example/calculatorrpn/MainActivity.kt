@@ -1,9 +1,12 @@
 package com.example.calculatorrpn
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.calculatorrpn.databinding.ActivityMainBinding
 import kotlin.math.*
 import kotlin.text.*
@@ -51,6 +54,11 @@ class MainActivity : AppCompatActivity() {
         binding.buttonPlusMinus.setOnClickListener(){calculator.plusMinus();refreshStack()}
         binding.buttonSettings.setOnClickListener(){openSettings()}
 
+        val settings = getSharedPreferences("General", 0)
+        rounding = settings.getInt("Rounding", rounding)
+        var colorStr = settings.getString("Color", "Violet")
+        changeStackColor(colorStr)
+
     }
 
     private fun inputNumber(num : String){
@@ -89,10 +97,35 @@ class MainActivity : AppCompatActivity() {
 
     private fun openSettings(){
         val intent = Intent(this, SettingsActivity::class.java)
-        startActivity(intent)
+        settingsActionResult.launch(intent)
+    }
 
-        val settings = getSharedPreferences("General", 0)
-        rounding = settings.getInt("Rounding", rounding)
+
+    private val settingsActionResult = registerForResult{ resultCode, data ->
+        if(resultCode == RESULT_OK){
+            val settings = getSharedPreferences("General", 0)
+            rounding = settings.getInt("Rounding", rounding)
+            var colorStr = settings.getString("Color", "Violet")
+            changeStackColor(colorStr)
+            refreshStack()
+        }
+        else{
+            Log.i("debug", "result not okej")
+        }
+    }
+
+
+
+    private fun changeStackColor(colStr : String?){
+        var colorId = when(colStr){
+            "Violet" -> R.color.purple_200
+            "Red" -> R.color.Red
+            "Green" -> R.color.Green
+            "Blue" -> R.color.Blue
+            else -> R.color.purple_200
+        }
+        var color = ContextCompat.getColor(this, colorId)
+        binding.stackList.setBackgroundColor(color)
     }
 
 

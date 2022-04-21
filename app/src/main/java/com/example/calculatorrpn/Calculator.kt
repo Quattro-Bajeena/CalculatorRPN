@@ -7,9 +7,10 @@ class Calculator {
     var stack : Deque<Float> = ArrayDeque<Float>()
 
     constructor(){
-        stack.push(6f)
-        stack.push(7.8f)
-        stack.push(3f)
+        stack.push(6.12f)
+        stack.push(7.82131f)
+        stack.push(3.125455532f)
+        stack.push(56f)
     }
 
     fun enter(num : Float){

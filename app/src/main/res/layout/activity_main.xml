@@ -30,6 +30,7 @@
 
             <Button
                 android:id="@+id/buttonNum8"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -37,6 +38,7 @@
 
             <Button
                 android:id="@+id/buttonNum9"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -44,6 +46,7 @@
 
             <Button
                 android:id="@+id/buttonPlus"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -51,6 +54,7 @@
 
             <Button
                 android:id="@+id/buttonMinus"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -63,37 +67,47 @@
 
             <Button
                 android:id="@+id/buttonNum4"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:text="4" />
 
             <Button
                 android:id="@+id/buttonNum5"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:text="5" />
 
             <Button
                 android:id="@+id/buttonNum6"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:text="6" />
 
             <Button
                 android:id="@+id/buttonMultiply"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:text="*" />
 
             <Button
                 android:id="@+id/buttonDivide"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:text="/" />
         </TableRow>
 
@@ -103,37 +117,47 @@
 
             <Button
                 android:id="@+id/buttonNum1"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:text="1" />
 
             <Button
                 android:id="@+id/buttonNum2"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:text="2" />
 
             <Button
                 android:id="@+id/buttonNum3"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:text="3" />
 
             <Button
                 android:id="@+id/buttonPower"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:text="^" />
 
             <Button
                 android:id="@+id/buttonSqrt"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:text="√" />
         </TableRow>
 
@@ -143,30 +167,29 @@
 
             <Button
                 android:id="@+id/buttonNum0"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:text="0" />
 
             <Button
-                android:id="@+id/buttonDrop"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="drop" />
-
-            <Button
                 android:id="@+id/buttonSwap"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:text="swap" />
 
             <Button
                 android:id="@+id/buttonPlusMinus"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:text="+/-" />
 
             <Button
@@ -174,7 +197,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+
                 android:text="undo" />
+
+            <Button
+                android:id="@+id/buttonDot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="." />
         </TableRow>
 
         <TableRow
@@ -183,24 +215,40 @@
 
             <Button
                 android:id="@+id/buttonSettings"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Settings" />
+
+                android:text="Settings"
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/buttonAC"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:text="AC" />
 
             <Button
                 android:id="@+id/buttonEnter"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:text="Enter" />
+
+            <Button
+                android:id="@+id/buttonDrop"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="drop" />
         </TableRow>
     </TableLayout>
 
@@ -209,9 +257,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="32dp"
         android:text="val"
-        android:textSize="48sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -219,9 +267,9 @@
 
     <ListView
         android:id="@+id/stackList"
-        android:layout_width="222dp"
-        android:layout_height="489dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        android:layout_width="118dp"
+        android:layout_height="478dp"
+        android:background="#673AB7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

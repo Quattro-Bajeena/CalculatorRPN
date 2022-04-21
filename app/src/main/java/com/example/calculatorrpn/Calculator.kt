@@ -4,13 +4,10 @@ import kotlin.math.*
 
 class Calculator {
 
-    var stack : Deque<Float> = ArrayDeque<Float>()
+    var stack : Deque<Float> = ArrayDeque()
 
     constructor(){
-        stack.push(6.12f)
-        stack.push(7.82131f)
-        stack.push(3.125455532f)
-        stack.push(56f)
+        stack.push(3f)
     }
 
     fun enter(num : Float){

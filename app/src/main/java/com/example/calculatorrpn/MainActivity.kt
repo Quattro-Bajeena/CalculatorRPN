@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         binding.buttonNum7.setOnClickListener(){inputNumber("7")}
         binding.buttonNum8.setOnClickListener(){inputNumber("8")}
         binding.buttonNum9.setOnClickListener(){inputNumber("9")}
+        binding.buttonSeparator.setOnClickListener() {inputSeparator()}
         binding.buttonUndo.setOnClickListener() {undo()}
         binding.buttonEnter.setOnClickListener(){enterNumber()}
         binding.buttonPlus.setOnClickListener(){calculator.add();refreshStack()}
@@ -65,6 +66,17 @@ class MainActivity : AppCompatActivity() {
         enteredValue += num
         binding.textEntered.text = enteredValue
         //Log.i("debug", enteredValue)
+    }
+
+    private fun inputSeparator(){
+        if(enteredValue.isEmpty() || enteredValue.indexOf('.', 0, true) != -1){
+            return
+        }
+        else{
+            enteredValue += '.'
+            binding.textEntered.text = enteredValue
+        }
+
     }
 
     private fun enterNumber(){

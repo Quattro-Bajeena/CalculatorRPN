@@ -71,7 +71,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                
+
                 android:text="4" />
 
             <Button
@@ -80,7 +80,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                
+
                 android:text="5" />
 
             <Button
@@ -89,7 +89,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                
+
                 android:text="6" />
 
             <Button
@@ -98,7 +98,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                
+
                 android:text="*" />
 
             <Button
@@ -107,7 +107,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                
+
                 android:text="/" />
         </TableRow>
 
@@ -121,7 +121,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                
+
                 android:text="1" />
 
             <Button
@@ -130,7 +130,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                
+
                 android:text="2" />
 
             <Button
@@ -139,7 +139,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                
+
                 android:text="3" />
 
             <Button
@@ -148,7 +148,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                
+
                 android:text="^" />
 
             <Button
@@ -157,7 +157,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                
+
                 android:text="√" />
         </TableRow>
 
@@ -171,7 +171,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                
+
                 android:text="0" />
 
             <Button
@@ -180,7 +180,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                
+
                 android:text="swap" />
 
             <Button
@@ -189,7 +189,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                
+
                 android:text="+/-" />
 
             <Button
@@ -201,7 +201,7 @@
                 android:text="undo" />
 
             <Button
-                android:id="@+id/buttonDot"
+                android:id="@+id/buttonSeparator"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -221,7 +221,7 @@
                 android:layout_weight="1"
 
                 android:text="Settings"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
 
             <Button
                 android:id="@+id/buttonAC"
@@ -229,17 +229,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                
-                android:text="AC" />
 
-            <Button
-                android:id="@+id/buttonEnter"
-                style="@style/Widget.MaterialComponents.Button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                
-                android:text="Enter" />
+                android:text="AC" />
 
             <Button
                 android:id="@+id/buttonDrop"
@@ -249,6 +240,15 @@
                 android:layout_weight="1"
 
                 android:text="drop" />
+
+            <Button
+                android:id="@+id/buttonEnter"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="Enter" />
         </TableRow>
     </TableLayout>
 
@@ -268,8 +268,9 @@
     <ListView
         android:id="@+id/stackList"
         android:layout_width="118dp"
-        android:layout_height="478dp"
+        android:layout_height="488dp"
         android:background="#673AB7"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, calculator.stack.toList())
+        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, calculator.stack.map{roundFloat(it, rounding)})
         binding.stackList.adapter = adapter
 
         binding.textEntered.text = enteredValue
@@ -92,14 +92,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun refreshStack(){
-        fun roundFloat(num : Float, decimals : Int): Float {
-            var multiplier = 1f
-            repeat(decimals) { multiplier *= 10 }
-            return round(num * multiplier) / multiplier
-        }
+
         adapter.clear()
         adapter.addAll(calculator.stack.map{roundFloat(it, rounding)})
         adapter.notifyDataSetChanged()
+    }
+
+    private fun roundFloat(num : Float, decimals : Int): Float {
+        var multiplier = 1f
+        repeat(decimals) { multiplier *= 10 }
+        return round(num * multiplier) / multiplier
     }
 
     private fun undo(){
